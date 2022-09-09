@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="drawingforest_player.Player">
+    <left>
+        <VBox alignment="CENTER" prefHeight="563.0" prefWidth="234.0" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </BorderPane.margin>
+            <children>
+                <Separator prefWidth="200.0" />
+                <Label fx:id="chatLabel" alignment="TOP_LEFT" prefHeight="533.0" prefWidth="236.0" text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" textOverrun="CLIP" wrapText="true">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER" prefHeight="46.0" prefWidth="199.0">
+                    <children>
+                        <TextField fx:id="chatBox" prefHeight="25.0" prefWidth="182.0" promptText="解答は先頭に@をつけてね" />
+                        <Button mnemonicParsing="false" onAction="#InputChat" text="送信" />
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </HBox>
+            </children>
+        </VBox>
+    </left>
+    <right>
+        <BorderPane prefHeight="574.0" prefWidth="508.0" BorderPane.alignment="CENTER">
+            <bottom>
+                <HBox alignment="CENTER" prefHeight="0.0" prefWidth="424.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <ColorPicker fx:id="cPicker" />
+                        <Slider fx:id="sizer" majorTickUnit="5.0" max="10.0" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="1.0">
+                            <HBox.margin>
+                                <Insets right="5.0" />
+                            </HBox.margin>
+                        </Slider>
+                        <Button mnemonicParsing="false" onAction="#CanvasReset" text="Reset" />
+                        <Button mnemonicParsing="false" onAction="#Surrender" text="Give UP">
+                            <HBox.margin>
+                                <Insets left="5.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </bottom>
+            <top>
+                <HBox fx:id="hbox" alignment="TOP_CENTER" prefHeight="60.0" BorderPane.alignment="CENTER" />
+            </top>
+            <center>
+                <AnchorPane fx:id="ap" prefHeight="520.0" prefWidth="448.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Canvas fx:id="canvas" height="474.0" onMouseClicked="#Clicked" onMouseDragged="#Dragged" onMousePressed="#Pressed" width="448.0" />
+                    </children>
+                    <BorderPane.margin>
+                        <Insets right="1.0" />
+                    </BorderPane.margin>
+                </AnchorPane>
+            </center>
+        </BorderPane>
+    </right>
+</BorderPane>
